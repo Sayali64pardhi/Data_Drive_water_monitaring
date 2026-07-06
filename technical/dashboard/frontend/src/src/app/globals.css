@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  a {
+    @apply text-primary hover:underline;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:border-primary;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-gray-900 rounded-lg border border-gray-700 p-6;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg font-medium;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium;
+  }
+
+  .badge-success {
+    @apply inline-block px-3 py-1 bg-green-900 text-green-200 rounded-full text-sm font-medium;
+  }
+
+  .badge-warning {
+    @apply inline-block px-3 py-1 bg-yellow-900 text-yellow-200 rounded-full text-sm font-medium;
+  }
+
+  .badge-danger {
+    @apply inline-block px-3 py-1 bg-red-900 text-red-200 rounded-full text-sm font-medium;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg;
+  }
+
+  .animation-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Leaflet map fixes */
+.leaflet-container {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.leaflet-popup-content {
+  @apply text-gray-900;
+}
+
+/* Chart container adjustments */
+.recharts-wrapper {
+  @apply w-full;
+}
